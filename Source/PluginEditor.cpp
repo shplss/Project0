@@ -22,6 +22,7 @@ Project0AudioProcessorEditor::Project0AudioProcessorEditor (Project0AudioProcess
 
 Project0AudioProcessorEditor::~Project0AudioProcessorEditor()
 {
+    processor.shouldPlaySound = false;
 }
 
 //==============================================================================
@@ -39,4 +40,21 @@ void Project0AudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+}
+
+/*
+void Project0AudioProcessorEditor::mouseDown(const MouseEvent& e)
+{
+    
+    if (!processor.shouldPlaySound) 
+    {
+        processor.shouldPlaySound = true;
+    }
+    
+}
+*/
+
+void Project0AudioProcessorEditor::mouseUp(const MouseEvent& e)
+{
+    processor.shouldPlaySound = !processor.shouldPlaySound;
 }
